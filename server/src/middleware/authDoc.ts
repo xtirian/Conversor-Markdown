@@ -10,13 +10,12 @@ async function authDocProducao(
 
   if (host !== undefined) {
 
-    /*if (host.includes("localhost")) {
-      //Se o dominio de entrar for localhost ou /doc, ele não pedirá a senha
+    if (host.includes("localhost")) {
+      //Se o dominio de entrar for localhost, ele não pedirá a senha
       return next();
-    }*/
+    }
 
    //O usuario digitou a senha certa
-   console.log(req.originalUrl)
 
     if (senha === process.env.SWAGGER_SENHA_DOC || req.originalUrl !== "/doc/" ) {
       return next();
